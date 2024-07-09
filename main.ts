@@ -1,0 +1,33 @@
+player.onChat("xp", function () {
+    gameplay.xp(1e+100, mobs.target(LOCAL_PLAYER))
+})
+player.onChat("hide", function () {
+    mobs.applyEffect(INVISIBILITY, mobs.target(LOCAL_PLAYER), 1e+100, 255)
+})
+player.onItemInteracted(BOAT, function () {
+    gameplay.setWeather(CLEAR)
+    gameplay.timeSet(gameplay.time(DAWN))
+})
+player.onChat("effect", function () {
+    mobs.applyEffect(NIGHT_VISION, mobs.target(LOCAL_PLAYER), 1e+100, 255)
+    mobs.applyEffect(FIRE_RESISTANCE, mobs.target(LOCAL_PLAYER), 1e+100, 255)
+    mobs.applyEffect(RESISTANCE, mobs.target(LOCAL_PLAYER), 1e+100, 255)
+    mobs.applyEffect(SPEED, mobs.target(LOCAL_PLAYER), 1e+100, 255)
+    mobs.applyEffect(HASTE, mobs.target(LOCAL_PLAYER), 1e+100, 255)
+    mobs.applyEffect(STRENGTH, mobs.target(LOCAL_PLAYER), 1e+100, 255)
+    mobs.applyEffect(HEALTH_BOOST, mobs.target(LOCAL_PLAYER), 1e+100, 255)
+    mobs.applyEffect(REGENERATION, mobs.target(LOCAL_PLAYER), 1e+100, 255)
+    mobs.applyEffect(ABSORPTION, mobs.target(LOCAL_PLAYER), 1e+100, 255)
+    mobs.applyEffect(JUMP_BOOST, mobs.target(LOCAL_PLAYER), 1e+100, 255)
+    mobs.applyEffect(WATER_BREATHING, mobs.target(LOCAL_PLAYER), 1e+100, 255)
+})
+player.onItemInteracted(FISHING_ROD, function () {
+    mobs.spawn(DOLPHIN, pos(2, 4, 0))
+    mobs.spawn(PUFFERFISH, pos(-2, 4, 0))
+    mobs.spawn(SALMON, pos(0, 4, 2))
+    mobs.spawn(TROPICAL_FISH, pos(0, 4, -2))
+    mobs.spawn(COD, pos(2, 4, 2))
+    mobs.spawn(SQUID, pos(-2, 4, -2))
+})
+player.say("Lets go fishing!")
+player.say("Get a boat and a fishing rod")
